@@ -16,7 +16,7 @@
 			<xsl:for-each select="coverage/packages/package">
 				<xsl:for-each select="classes/class">
 					<xsl:choose>
-						<xsl:when test = "substring(@filename, (string-length(@filename) - string-length('.swift')) + 1) = '.swift' or substring(@filename, (string-length(@filename) - string-length('.m')) + 1) = '.m' or $objccov = 'true'">
+						<xsl:when test = "substring(@filename, (string-length(@filename) - string-length('.swift')) + 1) = '.swift' or substring(@filename, (string-length(@filename) - string-length('.m')) + 1) = '.m' or substring(@filename, (string-length(@filename) - string-length('.h')) + 1) = '.h' or $objccov = 'true'">
 							<file>
 								<xsl:attribute name="path">
 									<xsl:value-of select="@filename"/>
